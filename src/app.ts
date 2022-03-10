@@ -10,6 +10,10 @@ const myAge : number = 20;
 const status : boolean = true;
 const myObj: User = {id: 1, name: "Quân"};
 
+interface User{
+    id: number, // required
+    name: string// required
+}
 
 const objectArr: User[] = [{id: 1, name: "Quân"}, {id: 2, name: "Quân"}]
 

@@ -13,3 +13,4 @@ function sum(numA, numB) {
 }
 sum(a, b);
 console.log(sum(a, b));
+//# sourceMappingURL=app.js.map
