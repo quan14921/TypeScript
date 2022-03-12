@@ -24,3 +24,13 @@ function sum(numA: number , numB: number): number{
 sum(a,b)
 console.log(sum(a,b));
 
+
+
+type Product ={
+    id: number,
+    name: string
+}
+const getProducts = <T extends Product>(products: T[]) =>{
+    const result = products.map(item =>` <div>${item.name}</div>`)
+}
+getProducts([{id: 1,name:"A"}, {id: 2, name: "B"}]);
