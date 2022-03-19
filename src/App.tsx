@@ -1,29 +1,69 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import { NavLink, Route, Routes } from 'react-router-dom'
+import { Navigate, NavLink, Route, Router, Routes } from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import ProductPage from './pages/Product'
 import About from './pages/About'
 import Header from './components/Header'
-
+import WebsiteLayout from './pages/layouts/WebsiteLayout'
+import AdnimLayout from './pages/layouts/AdnimLayout'
+import ProductDetail from './pages/ProductDetail'
+import { ProductType } from './pages/types/product'
+import ProductManager from './pages/ProductManaget'
+import { list, remove } from './api/product'
 function App() {
- 
+  const [count, setCount] = useState(0);
+  const [status, setStatus] = useState(false);
+
+  const [products, setProducts] = useState<ProductType[]>([]);
+
+  useEffect(() => {
+      const getProducts = async () => {
+            const { data } = await list();
+            setProducts(data);
+      }
+      getProducts();
+  }, [])
+
+
+
+  const removeItem = (id) =>{
+    remove(id);
+
+    setProducts(products.filter(item => item.id !== id));
+  }
   return (
 
-    
     <div className="container">
-      <Header />
-       
+
       <main>
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="product" element={<ProductPage />}/>
-            <Route path="about" element={< About />}/>
-          </Routes>
+        <Routes>
+          <Route path="/" element={<WebsiteLayout />}>
+              <Route index element={<Homepage />} />
+
+              <Route path='product'>
+                <Route index element={<ProductPage />} />
+                <Route path=":id" element={<ProductDetail />} />
+              </Route>
+
+
+
+            </Route>
+
+
+            <Route path="admin" element={<AdnimLayout />}>
+              <Route index element={<Navigate to="dashboard" />} />
+              <Route path="dashboard" element={<h1>Dashboard page</h1>} />
+              <Route path="product" element={<ProductManager products={products} onRemove={removeItem} />} />
+            </Route>
+        </Routes>
       </main>
     </div>
   )
 }
-
+    
 export default App
+
+
+// npm init vite@latest my-app -- --template react-ts

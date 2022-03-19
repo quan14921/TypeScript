@@ -4,7 +4,10 @@ type Props = {}
 
 const Homepage = (props: Props) => {
   return (
-    <div>Homepages</div>
+    <div className="App">
+      <h1>Homepages</h1>
+      
+      </div>
   )
 }
 export default Homepage
