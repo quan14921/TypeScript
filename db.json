@@ -7,8 +7,18 @@
     },
     {
       "id": "3",
-      "name": "Product C",
-      "price": 3000
+      "name": "Product C23",
+      "price": "30000032"
+    },
+    {
+      "name": "van",
+      "price": "300000",
+      "id": "PkxbKa0"
+    },
+    {
+      "name": "áo nam thời trang 1",
+      "price": "300000",
+      "id": "USaKcwx"
     }
   ]
 }

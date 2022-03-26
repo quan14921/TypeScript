@@ -11,7 +11,9 @@ import AdnimLayout from './pages/layouts/AdnimLayout'
 import ProductDetail from './pages/ProductDetail'
 import { ProductType } from './pages/types/product'
 import ProductManager from './pages/ProductManaget'
-import { list, remove } from './api/product'
+import { add, list, remove, update } from './api/product'
+import ProductAdd from './pages/ProductAdd'
+import Editproduct from './pages/Editproduct'
 function App() {
   const [count, setCount] = useState(0);
   const [status, setStatus] = useState(false);
@@ -33,6 +35,17 @@ function App() {
 
     setProducts(products.filter(item => item.id !== id));
   }
+
+  const onHanldeAdd = (data) =>{
+    add(data);
+    setProducts([...products,data])
+  }
+
+  const onHanldeUpdate = async (product : ProductType) =>{
+    const {data} = await update(product);
+
+    setProducts(products.map(item => item.id == data.id ? data : item));
+  }
   return (
 
     <div className="container">
@@ -41,14 +54,10 @@ function App() {
         <Routes>
           <Route path="/" element={<WebsiteLayout />}>
               <Route index element={<Homepage />} />
-
               <Route path='product'>
                 <Route index element={<ProductPage />} />
                 <Route path=":id" element={<ProductDetail />} />
               </Route>
-
-
-
             </Route>
 
 
@@ -56,6 +65,8 @@ function App() {
               <Route index element={<Navigate to="dashboard" />} />
               <Route path="dashboard" element={<h1>Dashboard page</h1>} />
               <Route path="product" element={<ProductManager products={products} onRemove={removeItem} />} />
+              <Route path="add" element={<ProductAdd onAdd={onHanldeAdd}/>} />
+              <Route path=":id/edit" element={<Editproduct onUpdate={onHanldeUpdate}/>}/>
             </Route>
         </Routes>
       </main>
