@@ -14,11 +14,13 @@ import ProductManager from './pages/ProductManaget'
 import { add, list, remove, update } from './api/product'
 import ProductAdd from './pages/ProductAdd'
 import Editproduct from './pages/Editproduct'
+import Signup from './pages/signup'
+import { signup } from './api/user'
+import { UserType } from './pages/types/user'
+import Signin from './pages/signin'
 function App() {
-  const [count, setCount] = useState(0);
-  const [status, setStatus] = useState(false);
-
   const [products, setProducts] = useState<ProductType[]>([]);
+  const [users, setUsers] = useState<UserType[]>([]);
 
   useEffect(() => {
       const getProducts = async () => {
@@ -40,12 +42,20 @@ function App() {
     add(data);
     setProducts([...products,data])
   }
-
   const onHanldeUpdate = async (product : ProductType) =>{
     const {data} = await update(product);
 
     setProducts(products.map(item => item.id == data.id ? data : item));
   }
+
+
+  const onHanldesignup = (data) =>{
+      signup(data);
+      setUsers([...users,data])
+    }
+
+
+
   return (
 
     <div className="container">
@@ -53,6 +63,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<WebsiteLayout />}>
+              <Route path='signup' element={<Signup onsignup={onHanldesignup}/>}/>
+              <Route path='signin' element={<Signin/>}/>
               <Route index element={<Homepage />} />
               <Route path='product'>
                 <Route index element={<ProductPage />} />

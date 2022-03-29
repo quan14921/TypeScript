@@ -20,5 +20,13 @@
       "price": "300000",
       "id": "USaKcwx"
     }
+  ],
+  "users": [
+    {
+      "email": "qyieuf@gmail.com.vn",
+      "password": "$2a$10$.BSFewN7/2E9qZbvXd2oZ.0gmv8zehD.LJ/N/V/5fKWaCzFXE54.K",
+      "name": "admin",
+      "id": 1
+    }
   ]
 }
