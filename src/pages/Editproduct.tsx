@@ -10,7 +10,8 @@ type Props = {
 
 type FormInput ={
     name: string,
-    price: number
+    price: number,
+    desc: string
 }
 
 const Editproduct = (props: Props) => {
@@ -34,9 +35,10 @@ const Editproduct = (props: Props) => {
     
   return (
     <form action="" onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" {...register('name', { required: true})} />
+        <input type="text"  {...register('name', { required: true})} />
         { errors.name && <span>Fields is required</span>}
         <input type="number" {...register('price')} />
+        <input type="text"  {...register('desc', { required: true})} />
         <button>Update</button>
     </form>
   )

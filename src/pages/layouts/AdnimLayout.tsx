@@ -1,13 +1,13 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import Dashboard from '../admin/Dashboard'
 
 type Props = {}
 
 const AdnimLayout = (props: Props) => {
   return (
     <div>
-        <header>Header Admin</header>
-        <aside>Aside</aside>
+        <header><Dashboard /> </header>
         <main>
             <Outlet />
         </main>

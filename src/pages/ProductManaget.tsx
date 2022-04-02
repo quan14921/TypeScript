@@ -10,12 +10,15 @@ type ProductManagerProps = {
 const ProductManager = ({ products, onRemove }: ProductManagerProps) => {
   return (
     <div>
-      <table>
+       <table className="table table-striped">
         <thead>
-          <th>#</th>
-          <th>name</th>
-          <th>Price</th>
-          <th></th>
+          <tr>
+            <th className='text-start' >#</th>
+            <th className='text-start' >Name</th>
+            <th className='text-start' >Price</th>
+            <th className='text-start' >Desc</th>
+            <th className='text-start' >Remote</th>
+          </tr>
         </thead>
         <tbody>
         {products?.map((item, index) => {
@@ -23,6 +26,7 @@ const ProductManager = ({ products, onRemove }: ProductManagerProps) => {
             <td>{index + 1}</td>
             <td>{item.name}</td>
             <td>{item.price}</td>
+            <td>{item.desc}</td>
             <td>
               <button onClick={() => onRemove(item.id)}>Remove</button>
             </td>
@@ -30,7 +34,8 @@ const ProductManager = ({ products, onRemove }: ProductManagerProps) => {
         })}
         </tbody>
       </table>
-      </div>
+    </div>
+       
   )
 }
 

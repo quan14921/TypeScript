@@ -1,28 +1,47 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-
+import { read } from '../api/product';
+import { ProductType } from './types/product';
 type Props = {}
-type ProductType = {
-    _id: number,
-    name: string,
-    price: number
-}
+
 const ProductDetail = (props: Props) => {
     const { id} = useParams();
     const [product, setProduct] = useState<ProductType>(); // 1
-    console.log(id);
-    
     useEffect(() => { // 3
         const getProduct = async () => {
-            const response = await fetch('http://localhost:8000/api/products/'+id);
-            const data = await response.json();
+            const {data}= await read(id);
             setProduct(data);
-            
         }   
         getProduct();
     }, []);
   return ( // 2
-    <div>fgfnhg</div>
+  <div className="small-container single-product">
+  <div className="row">
+    <div className="col-2">
+      <img src={product?.img} width="100%" id="productImg" />
+    </div>
+    <div className="col-2">
+      <p>Home / T-Shirt</p>
+      <h1>{product?.name}</h1>
+      <h4>{product?.price}</h4>
+      <select>
+        <option>Select Size</option>
+        <option>XXL</option>
+        <option>XL</option>
+        <option>Large</option>
+        <option>Medium</option>
+        <option>Small</option>
+      </select><input type="number" defaultValue={1} />
+      <a  className="btn">Mua ngay</a>
+      <h3>Product Detail
+        <i className="fa fa-indent" />
+      </h3>
+      <br />
+      <p>{product?.desc} </p>
+    </div>
+  </div>
+</div>
+
   )
 }
 

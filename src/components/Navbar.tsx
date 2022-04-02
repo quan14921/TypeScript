@@ -4,17 +4,18 @@ type Props = {}
 
 const Navbar = (props: Props) => {
   return (
-    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-            <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
-        </li>
-        <li className="nav-item">
-            <NavLink className="nav-link" to="/product">Product </NavLink>
-        </li>
-        <li className="nav-item">
-            <NavLink className="nav-link" to="/about">About </NavLink>
-        </li>
-    </ul>
+      <ul id="MenuItems" className="p-2 flex flex-wrap content-center absolute right-5">
+    <li className="text-lg py-2 px-4">
+      <NavLink className="p-2" aria-current="page" to="/">Home</NavLink>
+      </li>
+    <li className="text-lg py-2 px-4">
+    <NavLink className="p-2" to="/product">Product </NavLink>
+      </li>
+    <li className="text-lg py-2 px-4">
+    <NavLink className="p-2" to="/Signin">Signin </NavLink>
+      </li>
+   </ul>
+    
   )
 }
 
