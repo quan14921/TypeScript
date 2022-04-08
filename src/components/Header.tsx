@@ -16,7 +16,7 @@ const Header = (props: Props) => {
         <Navbar/>
         
         <div className="absolute right-5">
-          <span id="account" className="text-black" />
+          <span id="account" className="text-black" />g
         </div>
       </nav>
     </div>
