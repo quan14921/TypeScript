@@ -21,3 +21,7 @@ export const update = (product : ProductType)=>{
     const url = `products/${product.id}`;
     return instance.put(url, product);
 }
+export const showcate = (id : number)=>{
+    const url = `/categorys/${id}/products`;
+    return instance.get(url);
+}

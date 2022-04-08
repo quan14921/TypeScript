@@ -4,7 +4,7 @@
       "id": 2,
       "name": "Áo Thời Trang 2",
       "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645338695/gshvtjddyhf2arll1mxp.jpg",
-      "price": "900000",
+      "price": "800000",
       "desc": "Ngày nay áo thun nam tay lỡ được coi là món đồ \\\" Must have \\\" trong tủ đồ của các tín đồ về thời trang. Càng ngày những chiếc áo thun nam tay lỡ unisex càng được chăm chút hơn về hình ảnh với nhiều mẫu mã và màu sắc đa dạng hơn và những thiết kế đặc sắc, bắt mắt hơn thậm chí còn bắt kịp nhiều trào lưu xu hướng đặc biệt là phong cách của đất nước kim chi - Hàn Quốc.\\n2s Clothing thấu hiểu được những vấn đề này và sẽ liên tục cập nhật các mẫu áo thun nam tay lỡ unisex mới nhất giúp các bạn có thể có nhiều sự lựa chọn.",
       "categoryId": 1
     },
@@ -65,15 +65,7 @@
       "categoryId": 1
     },
     {
-      "id": 11,
-      "name": "Quần Thời Trang 2",
-      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645339486/lx49ujq5brym595hwqnk.jpg",
-      "price": "900000",
-      "desc": "Ngày nay áo thun nam tay lỡ được coi là món đồ \\\" Must have \\\" trong tủ đồ của các tín đồ về thời trang. Càng ngày những chiếc áo thun nam tay lỡ unisex càng được chăm chút hơn về hình ảnh với nhiều mẫu mã và màu sắc đa dạng hơn và những thiết kế đặc sắc, bắt mắt hơn thậm chí còn bắt kịp nhiều trào lưu xu hướng đặc biệt là phong cách của đất nước kim chi - Hàn Quốc.\\n2s Clothing thấu hiểu được những vấn đề này và sẽ liên tục cập nhật các mẫu áo thun nam tay lỡ unisex mới nhất giúp các bạn có thể có nhiều sự lựa chọn.",
-      "categoryId": 2
-    },
-    {
-      "name": "Áo Thời Trang 12",
+      "name": "Áo Thời Trang 45",
       "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645337661/gumxxnz7fjrpywsqx2oz.jpg",
       "price": "100000",
       "desc": "Ngày nay áo thun nam tay lỡ được coi là món đồ \" Must have \" trong tủ đồ của các tín đồ về thời trang. Càng ngày những chiếc áo thun nam tay lỡ unisex càng được chăm chút hơn về hình ảnh với nhiều mẫu mã và màu sắc đa dạng hơn và những thiết kế đặc sắc, bắt mắt hơn thậm chí còn bắt kịp nhiều trào lưu xu hướng đặc biệt là phong cách của đất nước kim chi - Hàn Quốc.\n2s Clothing thấu hiểu được những vấn đề này và sẽ liên tục cập nhật các mẫu áo thun nam tay lỡ unisex mới nhất giúp các bạn có thể có nhiều sự lựa chọn.",
@@ -81,11 +73,28 @@
       "categoryId": 1
     },
     {
+      "name": "giày nam thời trang ballen",
+      "img": "https://cf.shopee.vn/file/be61a24a712572d6032583527672c3e7",
+      "price": "11111",
+      "desc": "Ngày nay áo thun nam tay lỡ được coi là món đồ \\\" Must have \\\" trong tủ đồ của các tín đồ về thời trang. Càng ngày những chiếc áo thun nam tay lỡ unisex càng được chăm chút hơn về hình ảnh với nhiều mẫu mã và màu sắc đa dạng hơn và những thiết kế đặc sắc, bắt mắt hơn thậm chí còn bắt kịp nhiều trào lưu xu hướng đặc biệt là phong cách của đất nước kim chi - Hàn Quốc.\\n2s Clothing thấu hiểu được những vấn đề này và sẽ liên tục cập nhật các mẫu áo thun nam tay lỡ unisex mới nhất giúp các bạn có thể có nhiều sự lựa chọn.",
       "id": 13,
-      "name": "áo nam",
-      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645337695/db7nekhv4ymjhjz5hkrj.jpg",
-      "price": "300000",
-      "desc": "Ngày nay áo thun nam tay lỡ được coi là món đồ \" Must have \" trong tủ đồ của các tín đồ về thời trang. Càng ngày những chiếc áo thun nam tay lỡ unisex càng được chăm chút hơn về hình ảnh với nhiều mẫu mã và màu sắc đa dạng hơn và những thiết kế đặc sắc, bắt mắt hơn thậm chí còn bắt kịp nhiều trào lưu xu hướng đặc biệt là phong cách của đất nước kim chi - Hàn Quốc. 2s Clothing thấu hiểu được những vấn đề này và sẽ liên tục cập nhật các mẫu áo thun nam tay lỡ unisex mới nhất giúp các bạn có thể có nhiều sự lựa chọn."
+      "categoryId": 3
+    },
+    {
+      "name": "Sản phẩm AB",
+      "img": "https://cf.shopee.vn/file/be61a24a712572d6032583527672c3e7",
+      "price": "500000",
+      "desc": "Ngày nay áo thun nam tay lỡ được coi là món đồ \\\" Must have \\\" trong tủ đồ của các tín đồ về thời trang. Càng ngày những chiếc áo thun nam tay lỡ unisex càng được chăm chút hơn về hình ảnh với nhiều mẫu mã và màu sắc đa dạng hơn và những thiết kế đặc sắc, bắt mắt hơn thậm chí còn bắt kịp nhiều trào lưu xu hướng đặc biệt là phong cách của đất nước kim chi - Hàn Quốc.\\n2s Clothing thấu hiểu được những vấn đề này và sẽ liên tục cập nhật các mẫu áo thun nam tay lỡ unisex mới nhất giúp các bạn có thể có nhiều sự lựa chọn.",
+      "id": 14,
+      "categoryId": 3
+    },
+    {
+      "name": "Giày nam thời trang 13",
+      "img": "https://cf.shopee.vn/file/be61a24a712572d6032583527672c3e7",
+      "price": "700000",
+      "desc": "Ngày nay áo thun nam tay lỡ được coi là món đồ \\\" Must have \\\" trong tủ đồ của các tín đồ về thời trang. Càng ngày những chiếc áo thun nam tay lỡ unisex càng được chăm chút hơn về hình ảnh với nhiều mẫu mã và màu sắc đa dạng hơn và những thiết kế đặc sắc, bắt mắt hơn thậm chí còn bắt kịp nhiều trào lưu xu hướng đặc biệt là phong cách của đất nước kim chi - Hàn Quốc.\\n2s Clothing thấu hiểu được những vấn đề này và sẽ liên tục cập nhật các mẫu áo thun nam tay lỡ unisex mới nhất giúp các bạn có thể có nhiều sự lựa chọn.",
+      "id": 15,
+      "categoryId": 3
     }
   ],
   "categorys": [
@@ -100,33 +109,25 @@
     {
       "name": "Giầy",
       "id": 3
-    },
-    {
-      "name": "Dép",
-      "id": 5
-    },
-    {
-      "name": "áo nữ",
-      "id": 6
     }
   ],
   "users": [
     {
       "email": "qyieuf@gmail.com.vn",
       "password": "$2a$10$xRkQC1mtwe/NdRReyLXF5.CHNEdDNt/H/Lc1o7GntFwkNdMl7Z3Z6",
-      "username": "quanthph",
+      "name": "quanthph",
       "id": 1
     },
     {
       "email": "quanthph14921@fpt.edu.vn",
       "password": "$2a$10$oDszw7K7m.qOHDfXHslxlOSN78FSFW86zo2ylhM4HXiS.wOFcnx8y",
-      "username": "quanthph14921",
+      "name": "quanthph14921",
       "id": 2
     },
     {
       "email": "tquan@gmail.com",
       "password": "$2a$10$c0mcHEyqu8RIev9vIk8ZRejUJw.fY//Yp1LDnmJOUvOPXUZABW51C",
-      "username": "quanthph32432",
+      "name": "quanthph32432",
       "id": 3
     },
     {

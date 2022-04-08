@@ -15,29 +15,61 @@ import { add, list, remove, update } from './api/product'
 import ProductAdd from './pages/ProductAdd'
 import Editproduct from './pages/Editproduct'
 import Signup from './pages/signup'
-import { signup } from './api/user'
+import { listuser, signup } from './api/user'
 import { UserType } from './pages/types/user'
 import Signin from './pages/signin'
+import { CategoryType } from './pages/types/category'
+import { addcate, listcate, removecate } from './api/category'
+import CategoryManaget from './pages/CategoryManaget'
+import Categoryadd from './pages/Categoryadd'
+import UserManaget from './pages/UserManaget'
+import Showcate from './pages/Showcate'
+import PrivateRouter from './components/PrivateRouter'
 function App() {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [users, setUsers] = useState<UserType[]>([]);
+  const [categorys, setCategorys] = useState<CategoryType[]>([]);
 
   useEffect(() => {
-      const getProducts = async () => {
-            const { data } = await list();
-            setProducts(data);
+      const getUsers = async () => {
+            const { data } = await listuser();
+            setUsers(data);
       }
-      getProducts();
-  }, [])
+      getUsers();
+  }, []);
+  useEffect(() => {
+    const getProducts = async () => {
+          const { data } = await list();
+          setProducts(data);
+    }
+    getProducts();
+}, []);
+  useEffect(() => {
+    const getCategory = async () => {
+          const { data } = await listcate();
+          setCategorys(data);
+    }
+    getCategory();
+}, []);
+
+
+const removecategory = (id:number) =>{
+  removecate(id);
+
+  setCategorys(categorys.filter(item => item.id !== id));
+}
 
 
 
-  const removeItem = (id) =>{
+  const removeItem = (id:number) =>{
     remove(id);
 
     setProducts(products.filter(item => item.id !== id));
   }
-
+  const onHanldeAddcate = (data) =>{
+    addcate(data);
+    setCategorys([...categorys,data])
+  }
   const onHanldeAdd = (data) =>{
     add(data);
     setProducts([...products,data])
@@ -67,25 +99,33 @@ function App() {
               <Route path='signup' element={<Signup onsignup={onHanldesignup}/>}/>
               <Route path='signin' element={<Signin/>}/>
               <Route path='product'>
-                <Route index element={<ProductPage products={products}/>} />
+                <Route index element={<ProductPage  products={products}/>} />
                 <Route path=":id" element={<ProductDetail />} />
               </Route>
+              <Route path=":id" element={<Showcate />} />
             </Route>
             
 
-            <Route path="admin" element={<AdnimLayout />}>
+            <Route path="admin" element={ <PrivateRouter><AdnimLayout /></PrivateRouter> }>
               <Route index element={<Navigate to="dashboard" />} />
               <Route path="dashboard" element={<h1>Dashboard page</h1>} />
               <Route path="product" element={<ProductManager products={products} onRemove={removeItem} />} />
               <Route path="add" element={<ProductAdd onAdd={onHanldeAdd}/>} />
               <Route path=":id/edit" element={<Editproduct onUpdate={onHanldeUpdate}/>}/>
+              <Route path='category'>
+                  <Route index element={<CategoryManaget category={categorys} onRemove={removecategory} />}/>
+                  <Route path="add" element={<Categoryadd onAdd={onHanldeAddcate}/>} />
+              </Route>
+              <Route path='user'>
+              <Route index element={<UserManaget users={users}/>} />
+              </Route>
             </Route>
         </Routes>
       </main>
     </div>
   )
 }
-    
+                                                                                                                                  
 export default App
 
 

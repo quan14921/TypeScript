@@ -8,11 +8,13 @@ type Props = {
 }
 type FormInput ={
     name: String,
-    price: number
+    price: number,
+    desc: string,
+    img: string
 }
 
 const ProductAdd = (props: Props) => {
-    const {register, handleSubmit, formState} = useForm<FormInput>();
+    const {register, handleSubmit, formState:{errors}} = useForm<FormInput>();
     const navigate = useNavigate();
     const onSubmit: SubmitHandler<FormInput> = data => {
         props.onAdd(data);
@@ -20,9 +22,14 @@ const ProductAdd = (props: Props) => {
     }
   return (
     <form action="" onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" {...register('name', {required: true})}/>
-        <input type="number"{...register('price')} />
-        <button>Add</button>
+       Name <input type="text" {...register('name', {required: true})}/>
+       <p>{ errors.name && <span>ko được bỏ trống</span>}</p> 
+       ảnh <input type="text"{...register('img')} />
+       Price <input type="number"{...register('price')} />
+       Mô tả <input type="text" {...register('desc', {required: true})}/>
+       <p>{ errors.desc && <span>ko được bỏ trống</span>}</p> 
+       <button className="btn btn-outline-primary">Add</button>
+
     </form>
   )
 }

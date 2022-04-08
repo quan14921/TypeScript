@@ -31,7 +31,7 @@ const Signin = () => {
               <form action="" id="RegForm" onSubmit={handleSubmit(onSubmit)}>
                 <input type="email" placeholder="Username" {...register('email', { required: true })} />
                 <input type="password" placeholder="Password" {...register('password', { required: true })} />
-                <button type="submit" className="btn">Đăng Nhập</button><br />
+                <button type="submit" className="btn btn-danger">Đăng Nhập</button><br />
                 <p>Bạn có muốn <a href="/signup">Đăng ký</a> ko</p>
               </form>
             </div>
@@ -41,7 +41,6 @@ const Signin = () => {
       </div>
       
     </div>
-
   )
 }
 

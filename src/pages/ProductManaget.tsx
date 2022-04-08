@@ -10,7 +10,8 @@ type ProductManagerProps = {
 const ProductManager = ({ products, onRemove }: ProductManagerProps) => {
   return (
     <div>
-       <table className="table table-striped">
+      <h2>Admin Sản Phẩm</h2>
+       <table className="table table-hover">
         <thead>
           <tr>
             <th className='text-start' >#</th>
@@ -18,6 +19,7 @@ const ProductManager = ({ products, onRemove }: ProductManagerProps) => {
             <th className='text-start' >Price</th>
             <th className='text-start' >Desc</th>
             <th className='text-start' >Remote</th>
+            <th className='text-start' >Edit</th>
           </tr>
         </thead>
         <tbody>
@@ -28,12 +30,14 @@ const ProductManager = ({ products, onRemove }: ProductManagerProps) => {
             <td>{item.price}</td>
             <td>{item.desc}</td>
             <td>
-              <button onClick={() => onRemove(item.id)}>Remove</button>
+              <button className='btn btn-outline-primary' onClick={() => onRemove(item.id)}>Remove</button>
             </td>
+            <td><button className='btn btn-outline-primary'><a href={`${item.id}/edit`}>Edit</a></button></td>
           </tr>
         })}
         </tbody>
       </table>
+      <button className='btn btn-light'><a href="add">Add Sản Phẩm</a></button>
     </div>
        
   )

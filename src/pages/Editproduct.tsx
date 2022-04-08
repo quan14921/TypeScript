@@ -36,7 +36,7 @@ const Editproduct = (props: Props) => {
   return (
     <form action="" onSubmit={handleSubmit(onSubmit)}>
         <input type="text"  {...register('name', { required: true})} />
-        { errors.name && <span>Fields is required</span>}
+        { errors.name && <span>ko được bỏ trống</span>}
         <input type="number" {...register('price')} />
         <input type="text"  {...register('desc', { required: true})} />
         <button>Update</button>

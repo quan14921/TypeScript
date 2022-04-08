@@ -9,3 +9,8 @@ export const signin = (user:UserType) => {
     const url = "/signin";
     return instance.post(url, user);
 }
+
+export const listuser = () =>{
+    const url = "/users";
+    return instance.get(url);
+}

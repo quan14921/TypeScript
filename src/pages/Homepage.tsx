@@ -1,7 +1,7 @@
 import React from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { ProductType } from './types/product'
-
+import NumberFormat from 'react-currency-format';
 type Props = {
   products: ProductType[]
 }
@@ -14,15 +14,14 @@ const Homepage = (props: Props) => {
       <div className="row">
         {props.products?.map(item => {
           return <div className="col-4">
-            {/* <a href=""><img src={item.img} /></a> */}
-            <NavLink className="p-2" to="/product/2"><img src={item.img}/></NavLink>
+            <a href={`product/${item.id}`}><img src={item.img} /></a>
             <a href="">
-              <h4>{item.name}</h4>
+              <h4><a href={`product/${item.id}`}>{item.name}</a></h4>
             </a>
-            <p>{item.price}</p>
-            <a href="#" className="btn btn-primary">BUY</a>
+            <p><NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} prefix={''} /> vnd</p>
+            <a className="btn btn-danger">BUY</a>
           </div>
-
+        
         })}
       </div>
     </div>

@@ -34,13 +34,14 @@ const Signup = (props: Props) => {
               <input type="text" placeholder="Username" {...register('name', { required: true })} />
               <input type="email" placeholder="Email" {...register('email', {required: true})} /><br/>
               <input type="password" placeholder="Password" {...register('password', { required: true })} /><br/>
-              <button type="submit" className="btn">Đăng ký</button>
+              <button type="submit" className="btn btn-danger">Đăng ký</button>
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   )
 }
 

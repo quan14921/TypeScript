@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { read } from '../api/product';
 import { ProductType } from './types/product';
+import NumberFormat from 'react-currency-format';
 type Props = {}
 
 const ProductDetail = (props: Props) => {
@@ -23,7 +24,7 @@ const ProductDetail = (props: Props) => {
     <div className="col-2">
       <p>Home / T-Shirt</p>
       <h1>{product?.name}</h1>
-      <h4>{product?.price}</h4>
+      <h4><NumberFormat value={product?.price} displayType={'text'} thousandSeparator={true} prefix={''} /> vnd</h4>
       <select>
         <option>Select Size</option>
         <option>XXL</option>
@@ -32,7 +33,7 @@ const ProductDetail = (props: Props) => {
         <option>Medium</option>
         <option>Small</option>
       </select><input type="number" defaultValue={1} />
-      <a  className="btn">Mua ngay</a>
+      <a  className="btn btn-primary">Mua ngay</a>
       <h3>Product Detail
         <i className="fa fa-indent" />
       </h3>
