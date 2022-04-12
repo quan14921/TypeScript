@@ -5,8 +5,8 @@ type PrivateRouterProps = {
 }
 
 const PrivateRouter = (props: PrivateRouterProps) => {
-    const email = JSON.parse(localStorage.getItem("user")).user.email
-    if(email == 'quanthph14921@fpt.edu.vn'){
+    const email = JSON.parse(localStorage.getItem("user") as string ).user.email
+    if(email == 'qyieuf@gmail.com.vn'){
       
         return props.children
         

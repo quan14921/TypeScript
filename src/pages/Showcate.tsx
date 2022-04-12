@@ -16,9 +16,10 @@ const Showcate = (props: Props) => {
   
   useEffect(() => { // 3
       const getCategorys = async () => {
-          const {data}= await showcate(id);
-          setCategorys(data);
+          const {data} = await showcate(id);
           console.log(data);
+          setProduct(data.product);
+          
       }   
       getCategorys();
   }, []);
@@ -29,7 +30,7 @@ const Showcate = (props: Props) => {
       
     <div className="row">
       <h2 className="title text-4xl">Products</h2>
-      {categorys.map(item => {
+      {product.map(item => {
        return <div className="col-4">
           <a href={`product/${item._id}`}><img src={item.img} /></a>
           <a href="">

@@ -4,5 +4,5 @@ export type ProductType = {
     price: number,
     desc: String,
     img: string,
-    categoryId: string
+    category: number
 }

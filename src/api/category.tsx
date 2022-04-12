@@ -14,7 +14,7 @@ export const addcate = (category:CategoryType) => {
     const url = `/categorys`;
     return instance.post(url, category);
 }
-export const showcate = (id : string)=>{
+export const showcate = (id : number)=>{
     const url = `/categorys/${id}`;
     return instance.get(url);
 }
