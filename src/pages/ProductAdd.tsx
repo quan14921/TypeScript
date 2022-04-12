@@ -10,7 +10,8 @@ type FormInput ={
     name: String,
     price: number,
     desc: string,
-    img: string
+    img: string,
+    categoryId: string
 }
 
 const ProductAdd = (props: Props) => {
@@ -27,6 +28,8 @@ const ProductAdd = (props: Props) => {
        ảnh <input type="text"{...register('img')} />
        Price <input type="number"{...register('price')} />
        Mô tả <input type="text" {...register('desc', {required: true})}/>
+       <p>{ errors.desc && <span>ko được bỏ trống</span>}</p> 
+       Danh mục <input type="text" {...register('categoryId', {required: true})}/>
        <p>{ errors.desc && <span>ko được bỏ trống</span>}</p> 
        <button className="btn btn-outline-primary">Add</button>
 

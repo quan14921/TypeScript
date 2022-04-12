@@ -14,9 +14,9 @@ const Homepage = (props: Props) => {
       <div className="row">
         {props.products?.map(item => {
           return <div className="col-4">
-            <a href={`product/${item.id}`}><img src={item.img} /></a>
+            <a href={`product/${item._id}`}><img src={item.img} /></a>
             <a href="">
-              <h4><a href={`product/${item.id}`}>{item.name}</a></h4>
+              <h4><a href={`product/${item._id}`}>{item.name}</a></h4>
             </a>
             <p><NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} prefix={''} /> vnd</p>
             <a className="btn btn-danger">BUY</a>

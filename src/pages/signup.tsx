@@ -8,7 +8,7 @@ type Props = {
 }
 type FormInput ={
     name: string,
-    password: string,
+    password: string | number,
     email: string
 }
 

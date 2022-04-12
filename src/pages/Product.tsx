@@ -26,7 +26,7 @@ const ProductPage = (props: Props) => {
               <div className="card" style={{ width: '23rem' }}>
                 <img src={item.img} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h5 className="card-title"><a href={`product/${item.id}`}>{item.name}</a></h5>
+                  <h5 className="card-title"><a href={`product/${item._id}`}>{item.name}</a></h5>
                   <h3 className="card-title"><NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} prefix={''} /> vnd</h3>
                   <a href="#" className="btn btn-primary">BUY</a>
                 </div>

@@ -6,12 +6,16 @@ export const listcate = () => {
     const url = `/categorys`;
     return instance.get(url);
 }
-export const removecate = (id:number) => {
+export const removecate = (id:string) => {
     const url = `/categorys/${id}`;
     return instance.delete(url);
 }
 export const addcate = (category:CategoryType) => {
     const url = `/categorys`;
     return instance.post(url, category);
+}
+export const showcate = (id : string)=>{
+    const url = `/categorys/${id}`;
+    return instance.get(url);
 }
 

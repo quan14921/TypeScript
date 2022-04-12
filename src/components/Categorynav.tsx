@@ -22,7 +22,7 @@ const Categorynav = (props: Props) => {
     <li className="nav-item">
         <h4>Danh mục</h4>
         {categorys?.map(item =>
-        <a href={`${item.id}`} className="p-2 fs-4">{item.name}</a>
+        <a href={`${item._id}`} className="p-2 fs-4">{item.name}</a>
         )}
         
     </li>

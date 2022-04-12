@@ -3,7 +3,7 @@ import { ProductType } from './types/product'
 
 type ProductManagerProps = {
    products: ProductType[],
-   onRemove: (id:number) => void
+   onRemove: (_id:string) => void
 }
 
 
@@ -30,9 +30,9 @@ const ProductManager = ({ products, onRemove }: ProductManagerProps) => {
             <td>{item.price}</td>
             <td>{item.desc}</td>
             <td>
-              <button className='btn btn-outline-primary' onClick={() => onRemove(item.id)}>Remove</button>
+              <button className='btn btn-outline-primary' onClick={() => onRemove(item._id)}>Remove</button>
             </td>
-            <td><button className='btn btn-outline-primary'><a href={`${item.id}/edit`}>Edit</a></button></td>
+            <td><button className='btn btn-outline-primary'><a href={`${item._id}/edit`}>Edit</a></button></td>
           </tr>
         })}
         </tbody>

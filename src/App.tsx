@@ -53,18 +53,18 @@ function App() {
 }, []);
 
 
-const removecategory = (id:number) =>{
-  removecate(id);
+const removecategory = (_id:string) =>{
+  removecate(_id);
 
-  setCategorys(categorys.filter(item => item.id !== id));
+  setCategorys(categorys.filter(item => item._id !== _id));
 }
 
 
 
-  const removeItem = (id:number) =>{
-    remove(id);
+  const removeItem = (_id:string) =>{
+    remove(_id);
 
-    setProducts(products.filter(item => item.id !== id));
+    setProducts(products.filter(item => item._id !== _id));
   }
   const onHanldeAddcate = (data) =>{
     addcate(data);
@@ -77,7 +77,7 @@ const removecategory = (id:number) =>{
   const onHanldeUpdate = async (product : ProductType) =>{
     const {data} = await update(product);
 
-    setProducts(products.map(item => item.id == data.id ? data : item));
+    setProducts(products.map(item => item._id == data._id ? data : item));
   }
 
 
@@ -106,7 +106,7 @@ const removecategory = (id:number) =>{
             </Route>
             
 
-            <Route path="admin" element={ <PrivateRouter><AdnimLayout /></PrivateRouter> }>
+            <Route path="admin" element={<PrivateRouter><AdnimLayout /></PrivateRouter>  }>
               <Route index element={<Navigate to="dashboard" />} />
               <Route path="dashboard" element={<h1>Dashboard page</h1>} />
               <Route path="product" element={<ProductManager products={products} onRemove={removeItem} />} />

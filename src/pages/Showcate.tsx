@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import NumberFormat from 'react-currency-format';
 import { useParams } from 'react-router-dom';
-import { showcate } from '../api/product';
+import { showcate } from '../api/category';
+
 import Categorynav from '../components/Categorynav';
+import { CategoryType } from './types/category';
 import { ProductType } from './types/product';
 
 type Props = {}
 
 const Showcate = (props: Props) => {
   const { id} = useParams();
-  const [product, setProduct] = useState<ProductType>(); // 1
+  const [product, setProduct] = useState<ProductType[]>([]);
+  const [categorys, setCategorys] = useState<CategoryType[]>([]); 
+  
   useEffect(() => { // 3
-      const getProduct = async () => {
+      const getCategorys = async () => {
           const {data}= await showcate(id);
-          setProduct(data);
+          setCategorys(data);
           console.log(data);
       }   
-      getProduct();
+      getCategorys();
   }, []);
   return (
     <div className='App'>
@@ -25,11 +29,11 @@ const Showcate = (props: Props) => {
       
     <div className="row">
       <h2 className="title text-4xl">Products</h2>
-      {product?.map((item) => {
+      {categorys.map(item => {
        return <div className="col-4">
-          <a href={`product/${item.id}`}><img src={item.img} /></a>
+          <a href={`product/${item._id}`}><img src={item.img} /></a>
           <a href="">
-            <h4><a href={`product/${item.id}`}>{item.name}</a></h4>
+            <h4><a href={`product/${item._id}`}>{item.name}</a></h4>
           </a>
           <p><NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} prefix={''} /> vnd</p>
           <a className="btn btn-danger">BUY</a>

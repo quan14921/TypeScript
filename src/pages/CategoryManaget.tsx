@@ -3,7 +3,7 @@ import { CategoryType } from './types/category'
 
 type Props = {
     category : CategoryType[]
-    onRemove : (id:number) => void
+    onRemove : (_id:string) => void
 }
 
 const CategoryManaget = ({category , onRemove}: Props) => {
@@ -23,7 +23,7 @@ const CategoryManaget = ({category , onRemove}: Props) => {
             return <tr key={index}>
               <td>{index + 1}</td>
               <td>{item.name}</td>
-              <td><button className='btn btn-outline-primary' onClick={() => onRemove(item.id)}>Remove</button></td>
+              <td><button className='btn btn-outline-primary' onClick={() => onRemove(item._id)}>Remove</button></td>
               <td></td>
             </tr>
           })}
